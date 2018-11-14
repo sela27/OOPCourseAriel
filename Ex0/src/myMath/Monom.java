@@ -43,17 +43,34 @@ public class Monom implements function
 	{
 		str = str.replace(" ", "");
 		str = str.replace('X', 'x');
+		int index_of_x = 0;
 		double num_coe;
 		int num_power;
 		if(str.charAt(0) == 'x')
 			num_coe = 1; 
 		else
 		{
-			String coe = str.substring(0, str.indexOf("x"));
-			num_coe = Double.parseDouble(coe);
+			index_of_x = str.indexOf("x");
+			if(index_of_x == -1)
+			{
+				num_coe = Double.parseDouble(str);
+			}
+			else 
+			{
+			String coe = str.substring(0, index_of_x);
+			if(!coe.equals("-"))
+				num_coe = Double.parseDouble(coe);
+			else
+				num_coe = -1;
+			}
 		}
 		if(str.indexOf('^') == -1)
-			num_power = 0;
+		{
+			if(index_of_x == -1)
+				num_power = 0;
+			else
+				num_power = 1;
+		}
 		else
 		{
 			String pow = str.substring(str.indexOf('^') + 1);

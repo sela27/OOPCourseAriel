@@ -57,6 +57,7 @@ public class Polynom implements Polynom_able
 		Pol = new ArrayList<Monom>();
 		for(int i = 0; i < pol_array.length; i++)
 		{
+			if(!pol_array[i].isEmpty())
 			this.add(new Monom(pol_array[i]));
 		}
 	}
@@ -263,7 +264,7 @@ public class Polynom implements Polynom_able
 				area_sum+=rec_sum;
 			 x0 += eps;
 			
-		}while(f_x0 <= f_x1);
+		}while(x0 <= x1);
 		
 		return area_sum;
 	}
