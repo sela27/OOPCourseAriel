@@ -10,10 +10,8 @@ public class Test
 	public static void main(String[] args)
 	{
 		
-		//Polynom p = new Polynom("0.2x^4 - 1.5x^3 + 3.0x^2 - x - 5");
 		
-		
-		/*Monom m1 = new Monom("5x^4");
+		Monom m1 = new Monom("5x^4");
 		System.out.println("m1: " + m1);
 		System.out.println("m1(2): " + m1.f(2));
 		m1.add(new Monom("2x^4"));
@@ -39,7 +37,7 @@ public class Test
 		System.out.println("p1 derivative:" + p1.derivative());
 		System.out.println("p1 area between 0 and 2: " + p1.area(0, 2, 0.00001));
 		System.out.println("p1 is zero?: "  + p1.isZero());
-		System.out.println("p1 is equal to x^2?: " + p1.equals(new Polynom("x^2")));*/
+		System.out.println("p1 is equal to x^2?: " + p1.equals(new Polynom("x^2")));
 	}
 
 }

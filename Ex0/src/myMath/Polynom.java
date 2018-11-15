@@ -177,7 +177,7 @@ public class Polynom implements Polynom_able
 				else if(comp.compare_coefficient(p1Next, thisNext) !=0)
 					return false;
 			}
-			if(p1Next != null || thisNext != null)
+			if((p1Next == null && thisNext != null) || (p1Next != null && thisNext == null))
 				return false;
 			else
 				return true;
@@ -206,20 +206,21 @@ public class Polynom implements Polynom_able
 		double f_x0, f_x1, f_middle;
 		do
 		{
+			middle = (x0 + x1) / 2;
 			f_x0 = this.f(x0);
 			f_x1 = this.f(x1);
 			f_middle = this.f(middle);
 			if(f_x0 * f_middle <= 0)
 			{
 				x1 = middle;
-				middle = (x0 + x1) / 2; 
+				
 			}
 			else if(f_x1 * f_middle <= 0)
 			{
 				x0 = middle;
-				middle = (x0 + x1)/2;
+				
 			}
-		}while(f_middle < eps);
+		}while(Math.abs(f_middle) > eps);
 		
 		return middle;
 	}
